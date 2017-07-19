@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pritamprasad.spring_security.service.DefaultService;
 
 /**
- * @author 310207290
+ * @author Pritam
  *
  */
 @RestController
