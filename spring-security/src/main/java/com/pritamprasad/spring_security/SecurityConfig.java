@@ -28,6 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 	//http.authorizeRequests().antMatchers("/index/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_DBA')").and().formLogin();
-	http.authorizeRequests().antMatchers("/index").hasIpAddress("::1");
+	//http.authorizeRequests().antMatchers("/index").hasIpAddress("::1");
+	http.authorizeRequests().anyRequest();
     }
 }

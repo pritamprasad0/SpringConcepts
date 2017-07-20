@@ -1,15 +1,15 @@
 /**
  * 
  */
-package com.pritamprasad.spring_security.controller;
+package com.pritamprasad.spring_intercepter.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import com.pritamprasad.spring_security.service.DefaultService;
+
+import com.pritamprasad.spring_intercepter.service.DefaultService;
 
 /**
  * @author Pritam
@@ -28,12 +28,10 @@ public class DefaultController {
 	logger.info("Entering index controller..");
 	return defaultService.defaultContent();
     }
-
-    @CrossOrigin(origins = "http://::1:8080")
-    @RequestMapping(value = "/index2", method = RequestMethod.GET)
-    public String indexPost() {
-	logger.info("Entering index post controller..");
-	return defaultService.defaultContent();
+    
+    @RequestMapping(value = "/modindex", method = RequestMethod.GET)
+    public String modIndexGet() {
+	logger.info("Entering modindex controller..");
+	return defaultService.defaultContent() + " Modified!!!!";
     }
-
 }
