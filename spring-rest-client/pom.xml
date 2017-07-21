@@ -2,25 +2,29 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.pritamprasad</groupId>
-	<artifactId>spring-intercepter</artifactId>
-	<version>0.0.1</version>
+	<artifactId>spring-rest-client</artifactId>
 	<packaging>war</packaging>
-	
+
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<groupId>com.pritamprasad</groupId>
+		<artifactId>spring-concepts</artifactId>
+		<version>0.0.1</version>
 	</parent>
 
-	<name>spring-intercepter</name>
+	<name>spring-rest-client</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.pritamprasad</groupId>
+			<artifactId>common-interfaces</artifactId>
+			<version>0.0.1</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -39,4 +43,12 @@
 			<artifactId>log4j-core</artifactId>
 		</dependency>
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>
