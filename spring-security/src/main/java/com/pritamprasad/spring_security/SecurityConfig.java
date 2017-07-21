@@ -20,15 +20,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//	auth.inMemoryAuthentication().withUser("pritam").password("123456").roles("USER");
-//	auth.inMemoryAuthentication().withUser("admin").password("123456").roles("ADMIN");
-//	auth.inMemoryAuthentication().withUser("dba").password("123456").roles("DBA");
+	auth.inMemoryAuthentication().withUser("pritam").password("jarvis").roles("ADMIN");
+	auth.inMemoryAuthentication().withUser("pritamprasad").password("123456").roles("USER");
+	auth.inMemoryAuthentication().withUser("admin").password("123456").roles("ADMIN");
+	auth.inMemoryAuthentication().withUser("dba").password("123456").roles("DBA");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-	//http.authorizeRequests().antMatchers("/index/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_DBA')").and().formLogin();
+	http.authorizeRequests().antMatchers("/index/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_DBA')").and().formLogin();
 	//http.authorizeRequests().antMatchers("/index").hasIpAddress("::1");
-	http.authorizeRequests().anyRequest();
+	//http.authorizeRequests().anyRequest();
     }
 }
