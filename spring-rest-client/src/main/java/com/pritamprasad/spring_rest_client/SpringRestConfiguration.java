@@ -1,4 +1,4 @@
-package com.pritamprasad.spring_intercepter;
+package com.pritamprasad.spring_rest_client;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -19,7 +19,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<version>1.5.5.RELEASE</version>
 	</parent>
 
 	<dependencies>
@@ -46,6 +46,7 @@
 		<module>spring-security</module>
 		<module>spring-intercepter</module>
 		<module>spring-rest-client</module>
-		<module>common-interfaces</module>		
-   	</modules>	
+		<module>common-interfaces</module>
+    	<module>spring-jpa</module>
+  </modules>	
 </project>
