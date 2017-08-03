@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -34,5 +35,11 @@ public class DataController {
     	logger.info("Getting all Customers!!!");
     	Customer customer = defaultService.getCustomer(customerId);
     	return customer;
+    }
+    
+    @RequestMapping(value="/customer", method = RequestMethod.POST)
+    public @ResponseBody Customer AddCustomer(@RequestBody Customer customer){
+    	logger.info("Adding custome with name : "+ customer.getFirstName());
+    	return defaultService.addCustomer(customer);
     }
 }

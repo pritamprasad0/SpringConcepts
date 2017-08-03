@@ -48,5 +48,6 @@
 		<module>spring-rest-client</module>
 		<module>common-interfaces</module>
     	<module>spring-jpa</module>
+    <module>spring-aop-demo</module>
   </modules>	
 </project>

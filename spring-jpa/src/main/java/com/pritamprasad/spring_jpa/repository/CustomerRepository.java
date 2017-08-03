@@ -1,4 +1,4 @@
-package com.pritamprasad.spring_jpa.service;
+package com.pritamprasad.spring_jpa.repository;
 
 import java.util.List;
 

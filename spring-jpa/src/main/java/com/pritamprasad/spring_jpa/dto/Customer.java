@@ -16,11 +16,8 @@ public class Customer {
 	private long id;
 
 	private String firstName;
-
+	
 	private String lastName;
-
-	protected Customer() {
-	}
 
 	public long getId() {
 		return id;
@@ -44,6 +41,9 @@ public class Customer {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	protected Customer() {
 	}
 
 	public Customer(String firstName, String lastName) {

@@ -3,16 +3,13 @@
  */
 package com.pritamprasad.spring_jpa.service;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-
-import static com.pritamprasad.spring_jpa.util.Helper.emptyIfNull;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.pritamprasad.spring_jpa.dto.Customer;
+import com.pritamprasad.spring_jpa.repository.CustomerRepository;
 
 /**
  * @author Pritam
@@ -31,16 +28,15 @@ public class DefaultService {
 
 	public List<Customer> getAllCustomer() {
 		logger.info(String.format("Entering %1$s", "getAllCustomer"));
-		List<Customer> allCustomer = null;
-		allCustomer = new ArrayList<Customer>();
-		for (Customer customer : emptyIfNull(customerRepository.findAll())) {
-			allCustomer.add(customer);
-		}
-		return allCustomer;
+		return (List<Customer>) customerRepository.findAll();
 	}
 
 	public Customer getCustomer(String customerId) {
 		return customerRepository.findOne(Long.valueOf(customerId));
+	}
+
+	public Customer addCustomer(Customer customer) {
+		return customerRepository.save(customer);		 
 	}
 
 }

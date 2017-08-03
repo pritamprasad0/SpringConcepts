@@ -1,20 +1,18 @@
-/**
- * 
- */
-package com.pritamprasad.spring_security;
+package com.pritamprasad.spring_aop_demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
+
 /**
- * @author Pritam
+ * Hello world!
  *
  */
 @SpringBootApplication
-public class DefaultConfiguration extends SpringBootServletInitializer{
-
+public class DefaultConfiguration extends SpringBootServletInitializer
+{
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(DefaultConfiguration.class);
@@ -23,5 +21,4 @@ public class DefaultConfiguration extends SpringBootServletInitializer{
 	public static void main(String[] args) {
 		SpringApplication.run(DefaultConfiguration.class, args);
 	}
-
 }
