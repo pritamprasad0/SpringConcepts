@@ -1,5 +1,6 @@
 package com.pritamprasad.spring_aop_demo.aspects;
 
+import org.apache.logging.log4j.ThreadContext;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -37,7 +38,8 @@ public class DefaultLoggingAspect {
 
 	@Around("selectAll()")
 	public Object aroundAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-		System.out.println("Around advice");
+		System.out.println("Around advice");	
+		
 		Object[] args = proceedingJoinPoint.getArgs();
 		if (args.length > 0) {
 			System.out.println("Arguments passed: ");

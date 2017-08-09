@@ -26,7 +26,7 @@ public class DefaultController {
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String indexGet() {
-		logger.info("Entering index controller..");
+		logger.info("Entering index controller..");	
 		return defaultService.welcome();
 	}
 
